@@ -8,7 +8,7 @@ use function Symfony\Component\String\s;
 
 class Listing extends Model
 {
-    protected $fillable = ['title', 'company', 'location', 'website', 'email', 'tags', 'description'];
+    protected $fillable = ['title', 'logo', 'company', 'location', 'website', 'email', 'tags', 'description'];
 
     use HasFactory;
 
