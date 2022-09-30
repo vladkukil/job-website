@@ -8,7 +8,7 @@ use function Symfony\Component\String\s;
 
 class Listing extends Model
 {
-    protected $fillable = ['title', 'logo', 'company', 'location', 'website', 'email', 'tags', 'description'];
+    protected $fillable = ['title','user_id', 'logo', 'company', 'location', 'website', 'email', 'tags', 'description'];
 
     use HasFactory;
 
@@ -23,6 +23,11 @@ class Listing extends Model
                 ->orWhere('tags', 'like', '%' . request('search') . '%');
 
         }
+    }
+
+    //Relationship To User
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
  //TODO Create a search by locations and companies.
